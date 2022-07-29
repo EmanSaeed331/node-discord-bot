@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon discordbot.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "discord.js": "^14.0.3",
+    "discord.js": "^12.5.3",
     "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

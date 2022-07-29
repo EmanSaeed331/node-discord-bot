@@ -2,11 +2,11 @@
 require('dotenv').config();
 const token = process.env.CLIENT_TOKEN
 // Discord.js versions ^13.0 require us to explicitly define client intents
-const { Client, GatewayIntentBits  } = require('discord.js');
+const { Client, Intents  } = require('discord.js');
 const client = new Client({
     intents: [
-        GatewayIntentBits.Guilds,
-        // ...
+      Intents.FLAGS.GUILDS,
+      Intents.FLAGS.GUILD_MESSAGES,
     ]
 })
 client.on('ready', () => {
