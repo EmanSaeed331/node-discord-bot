@@ -27,5 +27,4 @@ client.on('message', msg => {
       msg.reply('Pong!');
     }
   });
-  console.log(token)
-  client.login(token);
+ client.login(token);
