@@ -1,9 +1,13 @@
 // Initialize dotenv
 require('dotenv').config();
 const token = process.env.CLIENT_TOKEN
+const serverId = process.env.SERVER_ID;
+const channelToken = process.env.CHANNEL_TOKEN;
 // Discord.js versions ^13.0 require us to explicitly define client intents
 const { Client, Intents  } = require('discord.js');
-const client = new Client({
+const Discord = require('discord.js')
+const webhook = new Discord.WebhookClient(serverId,channelToken);
+ const client = new Client({
     intents: [
       Intents.FLAGS.GUILDS,
       Intents.FLAGS.GUILD_MESSAGES,
@@ -26,5 +30,7 @@ client.on('message', msg => {
     if (msg.content === 'ping') {
       msg.reply('Pong!');
     }
-  });
+  }); 
+  webhook.send('HELLO for Server ')
+  
  client.login(token);
